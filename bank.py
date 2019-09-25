@@ -1,20 +1,20 @@
 import zerorpc
 
 class Bank(object):
-    saldo = 100
+    saldoBank = 200
     def cekSaldo(self):
-        return (self.saldo)
+        return (self.saldoBank)
         
     def inkrisUang(self, tambahUang):
-        self.saldo = self.saldo + tambahUang
-        return (self.saldo)
+        self.saldoBank = self.saldoBank + tambahUang
+        return (self.saldoBank)
 
     def dikrisUang(self, kurasUang):
-        if(kurasUang > self.saldo):
+        if(kurasUang > self.saldoBank):
             return ("Saldo anda kurang")
         else:
-            self.saldo = self.saldo - kurasUang
-            return (self.saldo)
+            self.saldoBank = self.saldoBank - kurasUang
+            return (kurasUang)
 
 bankBrow = zerorpc.Server(Bank())
 bankBrow.bind('tcp://0.0.0.0:5000')
