@@ -47,6 +47,7 @@ elif(pilih == 5):
     penguna = zerorpc.Client()
     penguna.connect("tcp://127.0.0.1:6000")
     penguna.MamaBeliPulsa(masuk)
+    sys.exit()
         
 else:
     print("anda salah input")
